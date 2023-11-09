@@ -1,0 +1,26 @@
+use crate::Array1;
+
+impl<T> Array1<T> {
+
+    #[allow(unused)]
+    pub fn get(&self) -> *mut T {
+        self.array
+    }
+
+    #[allow(unused)]
+    pub fn get_as_vec(&self) -> Vec<T> {
+        let size = self.size;
+        let array = self.array;
+        let mut vec: Vec<T> = vec![];
+
+        for i in 0..size {
+            let value = unsafe { 
+                let data = array.offset(i as isize);
+                std::ptr::read(data)
+            };
+            vec.push(value);
+        }
+
+        vec
+    }
+}
