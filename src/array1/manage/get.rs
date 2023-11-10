@@ -23,4 +23,9 @@ impl<T> Array1<T> {
 
         vec
     }
+
+    #[allow(unused)]
+    pub fn size(&self) -> usize {
+        self.size
+    }
 }
