@@ -18,5 +18,9 @@ impl<T> Array1<T> {
             let ptr = new_array.offset((size - 1) as isize);
             std::ptr::write(ptr, value);
         }
+
+        self.array = new_array;
+        self.size = size;
+        self.layout = new_layout;
     }
 }
