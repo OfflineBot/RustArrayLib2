@@ -1,11 +1,12 @@
 use std::ops::{AddAssign, DivAssign};
 
 use crate::Array1;
+use crate::traits::from_usize::FromUsize;
 
 impl<T> Array1<T>
 where
-    T: AddAssign + DivAssign<usize>,
-    T: Default + Copy
+    T: AddAssign + DivAssign,
+    T: Default + Copy + FromUsize<T>
 {
 
     #[allow(unused)]
@@ -19,7 +20,7 @@ where
                 let item = std::ptr::read(ptr);
                 value += item;
             }
-            value /= size;
+            value /= T::from_usize(size);
         } 
 
         value
