@@ -16,4 +16,13 @@ mod tests {
         x.add(4.3);
         println!("{:?}", x);
     }
+
+    #[test]
+    fn random_test() {
+        let mut x: Array1<f32> = Array1::new(10);
+        let min: f32 = -1.0;
+        let max: f32 = 1.0;
+        x.random_uniform(min, max);
+        println!("{:?}", x);
+    }
 }
