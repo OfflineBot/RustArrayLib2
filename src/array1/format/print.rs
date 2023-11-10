@@ -12,7 +12,8 @@ where
 
         for i in 0..self.size {
             let value = unsafe {
-                *self.array.offset(i as isize)
+                let ptr = self.array.offset(i as isize);
+                std::ptr::read(ptr)
             };
             vec.push(value);
         }

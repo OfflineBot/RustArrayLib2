@@ -3,7 +3,15 @@ use crate::Array1;
 impl<T> Array1<T> {
 
     #[allow(unused)]
-    pub fn get(&self) -> *mut T {
+    pub fn get(&self, index: usize) -> T {
+        unsafe {
+            let ptr = self.array.offset(index as isize);
+            std::ptr::read(ptr)
+        }
+    }
+    
+    #[allow(unused)]
+    pub fn get_array(&self) -> *mut T {
         self.array
     }
 

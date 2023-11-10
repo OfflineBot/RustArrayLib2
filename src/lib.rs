@@ -1,3 +1,5 @@
+mod traits;
+
 mod array1;
 pub use array1::array1::Array1;
 
@@ -24,5 +26,36 @@ mod tests {
         let max: f32 = 1.0;
         x.random_uniform(min, max);
         println!("{:?}", x);
+    }
+
+    #[test]
+    fn test_array2() {
+        let vec: Vec<Vec<f32>> = vec![
+            vec![1.0, 2.0],
+            vec![3.0, 4.0],
+            vec![5.0, 6.0],
+        ];
+        let vec2: Vec<Vec<f32>> = vec![
+            vec![1.0, 2.0, 3.0],
+            vec![4.0, 5.0, 6.0],
+        ];
+        let arr1: Array2<f32> = Array2::new_from_vec(vec);
+        let arr2: Array2<f32> = Array2::new_from_vec(vec2);
+
+        println!("arr1: {:?}", arr1);
+        println!("arr2: {:?}", arr2);
+
+        let my_dot: Array2<f32> = arr1.dot(&arr2);
+        println!("dot: {:?}", my_dot);
+    }
+
+    #[test]
+    fn test_std2() {
+        let vec: Vec<Vec<f32>> = vec![
+            vec![1.0, 1.0],
+            vec![0.0, 0.0],
+        ];
+        let arr: Array2<f32> = Array2::new_from_vec(vec);
+        println!("{:?}", arr.std());
     }
 }

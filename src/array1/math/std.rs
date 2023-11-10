@@ -2,39 +2,10 @@
 use std::ops::{AddAssign, SubAssign, MulAssign, DivAssign};
 
 use crate::Array1;
-
-
-pub trait Sqrt {
-    fn sqrt(self) -> Self;
-}
-
-impl Sqrt for f32 {
-    fn sqrt(self) -> Self {
-        self.sqrt()
-    }
-}
-
-impl Sqrt for f64 {
-    fn sqrt(self) -> Self {
-        self.sqrt()
-    }
-}
-
-pub trait FromUsize<T> {
-    fn from_usize(value: usize) -> T;
-}
-
-impl FromUsize<f32> for f32 {
-    fn from_usize(value: usize) -> f32 {
-        value as f32
-    }
-}
-
-impl FromUsize<f64> for f64 {
-    fn from_usize(value: usize) -> f64 {
-        value as f64
-    }
-}
+use crate::traits::{
+    from_usize::FromUsize,
+    sqrt::Sqrt,
+};
 
 impl<T> Array1<T>
 where
