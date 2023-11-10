@@ -1,13 +1,11 @@
 use std::alloc::{alloc, dealloc, Layout};
-use crate::Array1;
+use crate::Array2;
 
-impl<T> Array1<T> {
-
+impl<T> Array2<T> {
+    
     #[allow(unused)]
-    pub fn delete(self) {
-        unsafe {
-            dealloc(self.array as *mut u8, self.layout); 
-        } 
+    pub fn delete(mut self) {
+        unsafe { dealloc(self.array as *mut u8, self.layout) };
     }
 
     #[allow(unused)]
@@ -15,7 +13,9 @@ impl<T> Array1<T> {
         unsafe { dealloc(self.array as *mut u8, self.layout) };
         let new_layout = Layout::array::<T>(0).unwrap();
         let new_array = unsafe { alloc(new_layout) as *mut T };
-        self.array = new_array; 
+        self.array = new_array;
         self.layout = new_layout;
+        self.rows = 0;
+        self.cols = 0;
     }
 }
