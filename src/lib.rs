@@ -41,7 +41,7 @@ mod tests {
         ];
         let arr1: Array2<f32> = Array2::new_from_vec(vec);
         let arr2: Array2<f32> = Array2::new_from_vec(vec2);
-
+        
         println!("arr1: {:?}", arr1);
         println!("arr2: {:?}", arr2);
 
