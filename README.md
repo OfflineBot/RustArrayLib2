@@ -1,7 +1,7 @@
 # Custom Library for Arrays in Rust
 ## Implementing:
 + Custom Arrays for one/two dimensional Arrays
-+ linear algebra for Arrays
++ Linear Algebra for Arrays
 
 ## How to use:
 Import Library with: `rarray = { git = "https://github.com/OfflineBot/RustArrayLib.git" }`.
