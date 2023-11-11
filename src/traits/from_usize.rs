@@ -1,14 +1,14 @@
-pub trait FromUsize<T> {
-    fn from_usize(value: usize) -> T;
+pub trait FromUsize {
+    fn from_usize(value: usize) -> Self;
 }
 
-impl FromUsize<f32> for f32 {
+impl FromUsize for f32 {
     fn from_usize(value: usize) -> f32 {
         value as f32
     }
 }
 
-impl FromUsize<f64> for f64 {
+impl FromUsize for f64 {
     fn from_usize(value: usize) -> f64 {
         value as f64
     }

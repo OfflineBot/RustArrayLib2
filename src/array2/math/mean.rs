@@ -9,7 +9,7 @@ use crate::traits::from_usize::FromUsize;
 impl<T> Array2<T>
 where 
     T: AddAssign + DivAssign,
-    T: Copy + Default + FromUsize<T>
+    T: Copy + Default + FromUsize
 {
     
     #[allow(unused)]

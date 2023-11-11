@@ -10,7 +10,7 @@ use crate::traits::{
 impl<T> Array1<T>
 where
     T: AddAssign + SubAssign + MulAssign + DivAssign,
-    T: Default + Clone + Sqrt + FromUsize<T>
+    T: Default + Clone + Sqrt + FromUsize
 {
 
     #[allow(unused)]

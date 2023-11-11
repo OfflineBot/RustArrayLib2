@@ -6,7 +6,7 @@ use crate::traits::from_usize::FromUsize;
 impl<T> Array1<T>
 where
     T: AddAssign + DivAssign,
-    T: Default + Copy + FromUsize<T>
+    T: Default + Copy + FromUsize
 {
 
     #[allow(unused)]

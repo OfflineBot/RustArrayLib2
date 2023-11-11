@@ -9,7 +9,7 @@ use crate::traits::{
 impl<T> Array2<T> 
 where
     T: AddAssign + DivAssign + Sub<Output = T> + Mul<Output = T>,
-    T: Copy + Default + Sqrt + FromUsize<T>
+    T: Copy + Default + Sqrt + FromUsize
 {
 
     #[allow(unused)]
