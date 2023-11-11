@@ -17,7 +17,7 @@ where
         let rows = self.rows;
         let cols = self.cols;
 
-        let mut out: Array2<T> = Array2::new(rows, cols);
+        let out: Array2<T> = Array2::new(rows, cols);
         let mut sig = self.to_owned();
         sig = sig.sigmoid();
 

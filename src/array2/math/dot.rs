@@ -19,7 +19,7 @@ where
             panic!("Matricies dont match for matrix multiplication!");
         }
 
-        let mut out_array: Array2<T> = Array2::new(rows1, cols2);
+        let out_array: Array2<T> = Array2::new(rows1, cols2);
 
         for i in 0..rows1 {
             for j in 0..cols2 {

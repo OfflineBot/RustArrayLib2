@@ -6,7 +6,7 @@ where
     T: PartialOrd,
     T: Copy + Default
 {
-    pub fn replace_zero(&mut self, e_minus: T) {
+    pub fn replace_zero(&self, e_minus: T) {
         let row = self.rows;
         let col = self.cols;
 

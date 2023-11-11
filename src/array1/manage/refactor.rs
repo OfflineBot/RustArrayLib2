@@ -6,7 +6,7 @@ where
     T: PartialOrd,
     T: Default + Copy
 {
-    pub fn replace_zero(&mut self, e_minus: T) {
+    pub fn replace_zero(self, e_minus: T) {
         let size = self.size;
 
         for i in 0..size {

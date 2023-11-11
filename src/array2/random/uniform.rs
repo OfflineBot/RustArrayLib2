@@ -8,7 +8,7 @@ impl<T> Array2<T>
 where
     T: PartialOrd + AddAssign + SampleUniform + Clone
 {
-    pub fn random_uniform(&mut self, min: T, max: T) {
+    pub fn random_uniform(&self, min: T, max: T) {
         
         let mut rng = thread_rng();
         for i in 0..self.rows {

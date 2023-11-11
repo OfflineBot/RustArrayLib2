@@ -7,7 +7,7 @@ impl<T> Array1<T>
 where
     T: PartialOrd + AddAssign + SampleUniform + Clone
 {
-    pub fn random_uniform(&mut self, min: T, max: T) {
+    pub fn random_uniform(&self, min: T, max: T) {
         let size = self.size;
 
         let mut rng = thread_rng();

@@ -8,7 +8,6 @@ impl<T: Copy> Array1<T> {
         if index >= self.size {
             panic!("Sizes dont match!");
         }
-
         unsafe { 
             let ptr = self.array.offset(index as isize);
             std::ptr::write(ptr, value); 

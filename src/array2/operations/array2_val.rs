@@ -15,7 +15,7 @@ where
         let rows = self.rows;
         let cols = self.cols; 
 
-        let mut out: Array2<T> = Array2::new(rows, cols);
+        let out: Array2<T> = Array2::new(rows, cols);
         for i in 0..rows {
             for j in 0..cols {
                 let val = self.get(i, j) + other.clone();
@@ -38,7 +38,7 @@ where
         let rows = self.rows;
         let cols = self.cols; 
 
-        let mut out: Array2<T> = Array2::new(rows, cols);
+        let out: Array2<T> = Array2::new(rows, cols);
         for i in 0..rows {
             for j in 0..cols {
                 let val = self.get(i, j) - other.clone();
@@ -61,7 +61,7 @@ where
         let rows = self.rows;
         let cols = self.cols; 
 
-        let mut out: Array2<T> = Array2::new(rows, cols);
+        let out: Array2<T> = Array2::new(rows, cols);
         for i in 0..rows {
             for j in 0..cols {
                 let val = self.get(i, j) * other.clone();
@@ -84,7 +84,7 @@ where
         let rows = self.rows;
         let cols = self.cols; 
 
-        let mut out: Array2<T> = Array2::new(rows, cols);
+        let out: Array2<T> = Array2::new(rows, cols);
         for i in 0..rows {
             for j in 0..cols {
                 let val = self.get(i, j) / other.clone();
