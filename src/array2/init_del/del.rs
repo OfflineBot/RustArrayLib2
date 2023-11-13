@@ -2,11 +2,6 @@ use std::alloc::{alloc, dealloc, Layout};
 use crate::Array2;
 
 impl<T> Array2<T> {
-    
-    #[allow(unused)]
-    pub fn delete(mut self) {
-        unsafe { dealloc(self.array as *mut u8, self.layout) };
-    }
 
     #[allow(unused)]
     pub fn clean(&mut self) {
@@ -17,5 +12,13 @@ impl<T> Array2<T> {
         self.layout = new_layout;
         self.rows = 0;
         self.cols = 0;
+    }
+}
+
+impl<T> Drop for Array2<T> {
+
+    #[allow(unused)]
+    fn drop(&mut self) {
+        unsafe { dealloc(self.array as *mut u8, self.layout) };
     }
 }

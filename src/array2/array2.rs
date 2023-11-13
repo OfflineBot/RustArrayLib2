@@ -1,6 +1,6 @@
 use std::alloc::Layout;
 
-#[derive(Clone, Copy)]
+#[derive(Clone)]
 pub struct Array2<T>{
     pub array: *mut T,
     pub rows: usize,

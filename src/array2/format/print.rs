@@ -1,5 +1,6 @@
 use crate::Array2;
 
+
 impl<T> std::fmt::Debug for Array2<T>
 where 
     T: std::fmt::Debug,
