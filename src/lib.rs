@@ -7,6 +7,7 @@ mod array2;
 pub use array2::array2::Array2;
 
 
+// testing
 #[cfg(test)]
 mod tests {
     use super::*;
