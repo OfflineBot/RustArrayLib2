@@ -1,5 +1,5 @@
 use std::ops::{Add, Sub, Mul, Div};
-use std::alloc::{Layout, alloc};
+use std::alloc::{Layout, alloc, dealloc};
 use crate::Array1;
 
 impl<T> Add<&Array1<T>> for Array1<T>
@@ -33,6 +33,7 @@ where
                 std::ptr::write(out_ptr, out_val);
             };
         }
+
         Array1 {
             array: new_array,
             size,

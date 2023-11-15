@@ -49,14 +49,14 @@ where
     }
 }
 
-impl<T> Mul<&Array2<T>> for Array2<T> 
+impl<T> Mul for Array2<T> 
 where
     T: Mul<Output = T>,
     T: Copy
 {
     type Output = Array2<T>;
 
-    fn mul(self, other: &Array2<T>) -> Array2<T> {
+    fn mul(self, other: Self) -> Array2<T> {
         let rows = self.rows;
         let cols = self.cols;  
 

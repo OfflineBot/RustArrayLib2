@@ -15,10 +15,10 @@ impl<T> Array2<T> {
     }
 }
 
-impl<T> Drop for Array2<T> {
-
-    #[allow(unused)]
-    fn drop(&mut self) {
-        unsafe { dealloc(self.array as *mut u8, self.layout) };
-    }
-}
+// impl<T> Drop for Array2<T> {
+// 
+//     #[allow(unused)]
+//     fn drop(&mut self) {
+//         unsafe { dealloc(self.array as *mut u8, self.layout) };
+//     }
+// }

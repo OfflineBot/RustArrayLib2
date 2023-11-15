@@ -1,3 +1,4 @@
+use std::fmt::Debug;
 use std::ops::{AddAssign, DivAssign};
 
 use crate::Array1;
@@ -6,7 +7,7 @@ use crate::traits::from_usize::FromUsize;
 impl<T> Array1<T>
 where
     T: AddAssign + DivAssign,
-    T: Default + Copy + FromUsize
+    T: Default + Copy + FromUsize + Debug
 {
 
     #[allow(unused)]
@@ -20,8 +21,8 @@ where
                 let item = std::ptr::read(ptr);
                 value += item;
             }
-            value /= T::from_usize(size);
         } 
+        value /= T::from_usize(size);
 
         value
     }
