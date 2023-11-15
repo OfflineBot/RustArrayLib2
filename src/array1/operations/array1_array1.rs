@@ -1,5 +1,5 @@
 use std::ops::{Add, Sub, Mul, Div};
-use std::alloc::{Layout, alloc, dealloc};
+use std::alloc::{Layout, alloc};
 use crate::Array1;
 
 impl<T> Add<&Array1<T>> for Array1<T>
