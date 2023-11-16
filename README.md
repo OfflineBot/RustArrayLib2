@@ -8,9 +8,6 @@ Import Library with: `rarray = { git = "https://github.com/OfflineBot/RustArrayL
 Then use `use rarray::Array1` to use one dimensional Arrays and `use rarray::Array2` for two dimensional Arrays.<br>
 The Library is mainly focused on deep learning mathematical operations and for f32/f64 types.
 
-## Containing:
-Custom Implementation for one and two dimensional arrays.
-
 ## Functions:
 ### Array1
 + `new(size: usize)` creates new empty Array1 with given size
@@ -31,6 +28,6 @@ Custom Implementation for one and two dimensional arrays.
 ### Array2
 
 
-## Still not done:
+## TODO:
 + Error handling
 + Better Info Texts
