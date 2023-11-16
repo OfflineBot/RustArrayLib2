@@ -16,25 +16,19 @@ where
     #[allow(unused)]
     pub fn std(&self) -> T {
 
-        let size = self.size;
+        let size = self.size();
         let tsize = T::from_usize(size);
 
         let mut mean = T::default();
         for i in 0..size {
-            let value = unsafe {
-                let ptr = self.array.offset(i as isize);
-                std::ptr::read(ptr)
-            };
+            let value = self.get(i);
             mean += value;
         }
         mean /= tsize.clone();
 
         let mut mean2 = T::default();
         for i in 0..size {
-            let mut sub_item = unsafe {
-                let ptr = self.array.offset(i as isize);
-                std::ptr::read(ptr)
-            };
+            let mut sub_item = self.get(i);
             sub_item -= mean.clone();
             sub_item *= sub_item.clone();
             mean2 += sub_item;
