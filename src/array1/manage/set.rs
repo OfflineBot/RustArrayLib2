@@ -5,6 +5,14 @@ where
     T: Clone + Copy
 {
 
+    ///
+    /// set `value` on the `index` of the Array1
+    /// 
+    /// ## Examples:
+    /// ```
+    /// let x: Array1<f32> = Array1::new(2);
+    /// x.set_index(1, 3.2) = [0.0, 3.2]
+    /// ```
     #[allow(unused)]
     pub fn set_index(&self, index: usize, value: T) {
        
@@ -17,7 +25,16 @@ where
         };
     }
 
-    // replaces array with given vector
+    ///
+    /// replaces the values of Array1 with `vec`
+    /// Vector must be same length than Array1
+    /// 
+    /// ## Examples:
+    /// ```
+    /// let x: Array1<f32> = Array1::new(2); 
+    /// x.set_vec(vec![2.0, 1.4]) = [2.0, 1.4]
+    /// x.set_vec(vec![2.0]) ! vec_size != Array1_size
+    /// ```
     #[allow(unused)]
     pub fn set_vec(&self, vec: Vec<T>) {
         let size = self.size();

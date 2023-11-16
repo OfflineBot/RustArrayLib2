@@ -12,7 +12,7 @@ where
     T: AddAssign + SubAssign + MulAssign + DivAssign,
     T: Default + Clone + Sqrt + FromUsize
 {
-
+    /// calculate the standard deviation of Array1
     #[allow(unused)]
     pub fn std(&self) -> T {
 

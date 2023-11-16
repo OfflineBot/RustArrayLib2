@@ -10,6 +10,7 @@ where
     T: Default + Copy + FromUsize + Debug
 {
 
+    /// calculates the mean of Array1
     #[allow(unused)]
     pub fn mean(&self) -> T {
 

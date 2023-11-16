@@ -9,6 +9,8 @@ impl<T> Array1<T>
 where
     T: AddAssign + Clone + SetVal<T> + PartialOrd + SampleUniform + Copy
 {
+    ///
+    /// replaces whole Array1 with random values
     pub fn random_uniform(self, min: T, max: T) {
         let size = self.size();
 

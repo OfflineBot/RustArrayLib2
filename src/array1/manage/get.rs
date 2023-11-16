@@ -2,6 +2,16 @@ use crate::Array1;
 
 impl<T> Array1<T> {
 
+    ///
+    /// get singe value from index
+    /// 
+    /// ## Example:
+    /// ``` 
+    /// let x: Array1<f32> = Array1::new(2);
+    /// x.set_index(0, 3.2);
+    /// x.get(0) = 3.2
+    /// x.get(1) = 0.0 
+    /// ``` 
     #[allow(unused)]
     pub fn get(&self, index: usize) -> T {
         unsafe {

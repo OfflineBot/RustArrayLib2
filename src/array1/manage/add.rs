@@ -4,6 +4,15 @@ use crate::Array1;
 
 impl<T> Array1<T> {
 
+    ///
+    /// Adds Item to Array1
+    /// 
+    /// ## Examples:
+    /// ```
+    /// let x: Array1<f32> = Array1::new(2);
+    /// x.add(4.2);
+    /// x = [0.0, 0.0, 4.2] 
+    /// ``` 
     #[allow(unused)]
     pub fn add(&mut self, value: T) {
         let mut size = self.size;
