@@ -3,21 +3,19 @@ use rand::{Rng, thread_rng, distributions::uniform::SampleUniform};
 
 use crate::Array1;
 
+use crate::traits::set_val::SetVal;
+
 impl<T> Array1<T> 
 where
-    T: PartialOrd + AddAssign + SampleUniform + Clone
+    T: AddAssign + Clone + SetVal<T> + PartialOrd + SampleUniform + Copy
 {
-    pub fn random_uniform(&self, min: T, max: T) {
-        let size = self.size;
+    pub fn random_uniform(self, min: T, max: T) {
+        let size = self.size();
 
         let mut rng = thread_rng();
         for i in 0..size {
-            unsafe {
-                let value = self.array.offset(i as isize);
-                let random_val = rng.gen_range(min.clone()..=max.clone());
-                std::ptr::write(value, random_val)
-            }
+            let random_val = rng.gen_range(T::set_val(min)..=T::set_val(max));
+            self.set_index(i, random_val); 
         }
-
     }
 }

@@ -14,6 +14,7 @@ impl<T> Array1<T> {
         let mut new_array = unsafe { alloc(new_layout) as *mut T };
 
         new_array = self.array;
+
         unsafe {
             let ptr = new_array.offset((size - 1) as isize);
             std::ptr::write(ptr, value);

@@ -11,7 +11,7 @@ impl<T> Array1<T> {
     }
     
     #[allow(unused)]
-    pub fn get_array(&self) -> *mut T {
+    pub fn get_raw_array(&self) -> *mut T {
         self.array
     }
 

@@ -11,10 +11,7 @@ where
         let mut vec: Vec<T> = vec![];
 
         for i in 0..self.size {
-            let value = unsafe {
-                let ptr = self.array.offset(i as isize);
-                std::ptr::read(ptr)
-            };
+            let value = self.get(i);
             vec.push(value);
         }
 

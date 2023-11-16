@@ -1,11 +1,14 @@
 use crate::Array1;
 
-impl<T: Copy> Array1<T> {
+impl<T> Array1<T> 
+where
+    T: Clone + Copy
+{
 
     #[allow(unused)]
     pub fn set_index(&self, index: usize, value: T) {
        
-        if index >= self.size {
+        if index >= self.size() {
             panic!("Sizes dont match!");
         }
         unsafe { 
@@ -14,9 +17,10 @@ impl<T: Copy> Array1<T> {
         };
     }
 
+    // replaces array with given vector
     #[allow(unused)]
     pub fn set_vec(&self, vec: Vec<T>) {
-        let size = self.size;
+        let size = self.size();
         let vec_size = vec.len();
         
         if size != vec_size {
@@ -24,10 +28,7 @@ impl<T: Copy> Array1<T> {
         }
 
         for i in 0..size {
-            unsafe {
-                let ptr = self.array.offset(i as isize);
-                std::ptr::write(ptr, vec[i]);
-            }
+            self.set_index(i, vec[i]);
         }
 
     }
