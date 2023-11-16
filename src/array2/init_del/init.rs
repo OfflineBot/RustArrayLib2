@@ -21,7 +21,7 @@ where
     }
 
     #[allow(unused)]
-    pub fn new_from_vec(vec: Vec<Vec<T>>) -> Array2<T> {
+    pub fn from_vec(vec: Vec<Vec<T>>) -> Array2<T> {
 
         let rows = vec.len();
         let cols = vec[0].len();
