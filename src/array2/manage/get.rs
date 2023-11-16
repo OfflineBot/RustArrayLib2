@@ -4,10 +4,10 @@ impl<T> Array2<T> {
     #[allow(unused)]
     pub fn get(&self, row: usize, col: usize) -> T {
 
-        if self.rows <= row {
+        if self.rows < row {
             println!("row dont match: self: {} try: {}", self.rows, row);
         }
-        if self.cols <= col {
+        if self.cols < col {
             println!("col dont match: self: {} try: {}", self.cols, col);
         }
 
