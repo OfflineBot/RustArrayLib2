@@ -3,6 +3,9 @@ use crate::Array2;
 impl<T> Array2<T> {
     #[allow(unused)]
     pub fn get(&self, row: usize, col: usize) -> T {
+        if self.rows <= row || self.cols <= col {
+            panic!("cant get the value! sizes dont match: {}x{} > {}x{}", row, col, self.rows, self.cols);
+        }
         unsafe {
             let ptr = self.array.offset(row as isize * self.cols as isize + col as isize);
             std::ptr::read(ptr)

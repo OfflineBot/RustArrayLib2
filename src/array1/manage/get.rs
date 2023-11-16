@@ -14,6 +14,9 @@ impl<T> Array1<T> {
     /// ``` 
     #[allow(unused)]
     pub fn get(&self, index: usize) -> T {
+        if self.size <= index {
+            panic!("Cant get index {} from total length {}", index, self.size);
+        } 
         unsafe {
             let ptr = self.array.offset(index as isize);
             std::ptr::read(ptr)

@@ -14,6 +14,10 @@ where
     pub fn random_uniform(self, min: T, max: T) {
         let size = self.size();
 
+        if min > max {
+            panic!("minimum value is bigger than maximum value for random uniform");
+        }
+
         let mut rng = thread_rng();
         for i in 0..size {
             let random_val = rng.gen_range(T::set_val(min)..=T::set_val(max));
