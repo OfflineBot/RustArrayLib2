@@ -16,7 +16,7 @@ where
     #[allow(unused)]
     pub fn set_index(&self, index: usize, value: T) {
        
-        if index >= self.size() {
+        if index > self.size() {
             panic!("Sizes dont match!");
         }
         unsafe { 
