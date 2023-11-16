@@ -29,5 +29,6 @@ The Library is mainly focused on deep learning mathematical operations and for f
 
 
 ## TODO:
++ Functions for Array2
 + Error handling
 + Better Info Texts
