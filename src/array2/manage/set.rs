@@ -4,7 +4,7 @@ impl<T> Array2<T> {
 
     #[allow(unused)]
     pub fn set(&self, rows: usize, cols: usize, value: T) {
-        if self.rows <= rows || self.cols <= cols {
+        if self.rows < rows || self.cols < cols {
             panic!("cant set the value! index is to high: {}x{} > {}x{}", rows, cols, self.rows, self.cols);
         }
         unsafe {
