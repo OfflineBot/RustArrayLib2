@@ -17,13 +17,12 @@ where
 
         let mut out: Array1<T> = Array1::new(self.cols);
 
-        let size = self.cols;
-        let layout = Layout::array::<T>(size).unwrap();
+        let col_size = self.cols;
 
-        for i in 0..self.cols {
+        for i in 0..col_size {
             let mut sum = T::default();
             for j in 0..self.rows {
-                sum += self.get(i, j);
+                sum += self.get(j, i);
             }
             sum /= T::from_usize(self.rows);
             out.set_index(i, sum);
