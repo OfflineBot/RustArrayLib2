@@ -16,28 +16,32 @@ where
     pub fn std(&self) -> Array1<T> {
         let out: Array1<T> = Array1::new(self.cols);
 
-        let mut mean_square: Array2<T> = Array2::new(self.cols, self.rows); 
+        let mean_squared: Array2<T> = Array2::new(self.rows, self.cols);
         for i in 0..self.cols {
             let mut sum = T::default();
+
             for j in 0..self.rows {
-                sum += self.get(i, j);
+                let value = self.get(j, i);
+                sum += value;
             }
             sum /= T::from_usize(self.rows);
+
             for j in 0..self.rows {
-                let sub_mean = self.get(j, i) - sum;
-                let square = sub_mean * sub_mean;
-                mean_square.set(j, i, square);
+                let minus_mean = self.get(j, i) - sum; 
+                let squared = minus_mean * minus_mean;
+                mean_squared.set(j, i, squared);
             }
         }
 
-        for i in 0..mean_square.cols {
+        for i in 0..self.cols {
             let mut sum = T::default();
-            for j in 0..mean_square.rows {
-                sum += mean_square.get(j, i);
+            for j in 0..self.rows {
+                let value = mean_squared.get(j, i);
+                sum += value; 
             }
-            sum /= T::from_usize(mean_square.rows);
-            sum = sum.sqrt();
-            out.set_index(i, sum);
+            sum /= T::from_usize(self.rows);
+            let sqrt = sum.sqrt();
+            out.set_index(i, sqrt);
         }
 
         out 

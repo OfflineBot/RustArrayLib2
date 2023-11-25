@@ -1,7 +1,4 @@
-use std::{
-    alloc::Layout, 
-    ops::{AddAssign, DivAssign},
-};
+use std::ops::{AddAssign, DivAssign};
 
 use crate::{Array1, Array2};
 use crate::traits::from_usize::FromUsize;
