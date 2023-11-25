@@ -1,5 +1,8 @@
 mod traits;
 
+mod macros;
+pub use macros::array;
+
 mod array1;
 pub use array1::array1::Array1;
 

@@ -8,7 +8,7 @@ where
 {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
 
-        let mut vec: Vec<Vec<T>> = vec![];
+        let mut vec: Vec<Vec<T>> = vec![]; 
 
         for i in 0..self.rows {
             let mut slice: Vec<T> = vec![];
