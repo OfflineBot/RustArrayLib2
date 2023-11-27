@@ -1,3 +1,3 @@
-pub mod lost;
+pub mod loss;
 pub mod relu;
 pub mod sigmoid;

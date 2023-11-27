@@ -17,7 +17,7 @@ where
     /// y.replace_zero(0.1) = [1.0, 3.2, 0.1];
     /// ```
     #[allow(unused)]
-    pub fn replace_zero(self, e_minus: T) {
+    pub fn replace_zero(mut self, e_minus: T) {
         let size = self.size;
 
         for i in 0..size {
