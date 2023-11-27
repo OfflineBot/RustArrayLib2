@@ -7,7 +7,7 @@ use crate::{Array1, Array2};
 impl<T> Add<&Array1<T>> for Array2<T> 
 where
     T: Add<Output = T>,
-    T: Copy
+    T: Copy + Default
 {
     type Output = Array2<T>;
 
@@ -30,7 +30,7 @@ where
 impl<T> Sub<&Array1<T>> for Array2<T> 
 where
     T: Sub<Output = T>,
-    T: Copy
+    T: Copy + Default
 {
     type Output = Array2<T>;
 
@@ -53,7 +53,7 @@ where
 impl<T> Mul<&Array1<T>> for Array2<T> 
 where
     T: Mul<Output = T>,
-    T: Copy
+    T: Copy + Default
 {
     type Output = Array2<T>;
 
@@ -76,7 +76,7 @@ where
 impl<T> Div<&Array1<T>> for Array2<T> 
 where
     T: Div<Output = T>,
-    T: Copy
+    T: Copy + Default
 {
     type Output = Array2<T>;
 
@@ -100,7 +100,7 @@ where
 impl<T> Add<Array1<T>> for Array2<T> 
 where
     T: Add<Output = T>,
-    T: Copy
+    T: Copy + Default
 {
     type Output = Array2<T>;
 
@@ -123,7 +123,7 @@ where
 impl<T> Sub<Array1<T>> for Array2<T> 
 where
     T: Sub<Output = T>,
-    T: Copy
+    T: Copy + Default
 {
     type Output = Array2<T>;
 
@@ -146,7 +146,7 @@ where
 impl<T> Mul<Array1<T>> for Array2<T> 
 where
     T: Mul<Output = T>,
-    T: Copy
+    T: Copy + Default
 {
     type Output = Array2<T>;
 
@@ -169,7 +169,7 @@ where
 impl<T> Div<Array1<T>> for Array2<T> 
 where
     T: Div<Output = T>,
-    T: Copy
+    T: Copy + Default
 {
     type Output = Array2<T>;
 

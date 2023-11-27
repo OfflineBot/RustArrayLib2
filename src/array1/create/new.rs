@@ -2,7 +2,10 @@ use std::alloc::{Layout, alloc};
 
 use crate::Array1;
 
-impl<T: Copy> Array1<T> {
+impl<T> Array1<T> 
+where
+    T: Copy + Default
+{
 
 
     /// Create empty Array1 with given `size`
@@ -16,11 +19,15 @@ impl<T: Copy> Array1<T> {
         let layout = Layout::array::<T>(size).unwrap(); 
         let array = unsafe { alloc(layout) as *mut T };
         let out: Array1<T>;
-        Array1 {
+        let out = Array1 {
             array,
             size,
             layout
+        };
+        for i in 0..size {
+            out.set_index(i, T::default());
         }
+        out
     }
 
     ///

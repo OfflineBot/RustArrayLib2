@@ -3,7 +3,7 @@ use crate::Array2;
 
 impl<T> Array2<T>
 where 
-    T: Copy
+    T: Copy + Default
 {
 
     #[allow(unused)]
@@ -12,12 +12,19 @@ where
         let layout = Layout::array::<T>(rows * cols).unwrap();  
         let array = unsafe { alloc(layout) as *mut T };
 
-        Array2 {
+        let out = Array2 {
             array,
             rows,
             cols,
             layout
+        };
+        
+        for i in 0..rows {
+            for j in 0..cols {
+                out.set(i, j, T::default());
+            }
         }
+        out
     }
 
     #[allow(unused)]
