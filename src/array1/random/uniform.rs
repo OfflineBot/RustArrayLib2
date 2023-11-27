@@ -11,7 +11,7 @@ where
 {
     ///
     /// replaces whole Array1 with random values
-    pub fn random_uniform(self, min: T, max: T) {
+    pub fn random_uniform(&self, min: T, max: T) {
         let size = self.size();
 
         if min > max {
@@ -25,7 +25,7 @@ where
         }
     }
 
-    pub fn random_uniform_seed(self, min: T, max: T, seed: u64) {
+    pub fn random_uniform_seed(&self, min: T, max: T, seed: u64) {
         let size = self.size();
 
         if min > max {
