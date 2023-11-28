@@ -6,7 +6,7 @@ fn dl() {
     let lr = 0.01;
     let hidden_layer = 4;
 
-    let e_minus = 1e-4;
+    let e_minus = 1e-3;
 
     let input: Array2<f32> = array![
         [1.0, 1.0],
@@ -23,6 +23,8 @@ fn dl() {
         [0.0, 0.0],
         [1.0, 0.0],
     ];
+    input.replace_zero(e_minus);
+    output.replace_zero(e_minus);
 
     let input_layer = input.size()[1];
     let output_layer = output.size()[1];
@@ -78,7 +80,7 @@ fn dl() {
     let z1 = new_norm.dot(&w1) + &b1;
     let a1 = z1.leaky_relu(e_minus);
     let z2 = a1.dot(&w2) + &b2;
-    let output = z2 * y_std * y_mean;
+    let output = z2 * y_std + y_mean;
     println!("output: {:?}", output);
 
 }
@@ -95,10 +97,13 @@ fn main() {
         [4.0, 5.0, 6.0],
     ];
     let array3 = array![
-        [1.0, 2.0, 3.0]
+        1.0, 2.0, 3.0
     ];
     let mut out = array1.dot(&array2);
     println!("hello");
     out = out + &array3;
     println!("out: {:?}", out);
+    println!("{:?}", array1.dot(&array2));
+
+    dl();
 }
