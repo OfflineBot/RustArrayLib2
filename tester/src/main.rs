@@ -97,6 +97,8 @@ fn main() {
     let array3 = array![
         [1.0, 2.0, 3.0]
     ];
-    let out = array1.dot(&array2) + &array3;
+    let mut out = array1.dot(&array2);
+    println!("hello");
+    out = out + &array3;
     println!("out: {:?}", out);
 }

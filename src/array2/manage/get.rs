@@ -5,10 +5,10 @@ impl<T> Array2<T> {
     pub fn get(&self, row: usize, col: usize) -> T {
 
         if self.rows < row {
-            println!("row dont match: self: {} try: {}", self.rows, row);
+            println!("cant get index of Array2! row dont match: self: {} try: {}", self.rows, row);
         }
         if self.cols < col {
-            println!("col dont match: self: {} try: {}", self.cols, col);
+            println!(" Cant get index of Array2! col dont match: self: {} try: {}", self.cols, col);
         }
 
         unsafe {
