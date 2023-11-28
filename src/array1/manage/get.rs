@@ -29,7 +29,7 @@ impl<T> Array1<T> {
     }
 
     #[allow(unused)]
-    pub fn get_as_vec(&self) -> Vec<T> {
+    pub fn to_vec(&self) -> Vec<T> {
         let size = self.size;
         let array = self.array;
         let mut vec: Vec<T> = vec![];
