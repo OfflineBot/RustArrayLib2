@@ -32,7 +32,8 @@ where
 }
 impl<T> SubAssign<Array2<T>> for Array2<T> 
 where
-    T: Sub<Output = T>
+    T: Sub<Output = T>,
+    T: Clone + Default + Copy
 {
     fn sub_assign(&mut self, rhs: Array2<T>) {
         let rows1 = self.rows;
@@ -83,7 +84,8 @@ where
 }
 impl<T> SubAssign<&Array2<T>> for Array2<T> 
 where
-    T: Sub<Output = T>
+    T: Sub<Output = T>,
+    T: Clone + Default + Copy
 {
     fn sub_assign(&mut self, rhs: &Array2<T>) {
         let rows1 = self.rows;

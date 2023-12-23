@@ -1,6 +1,9 @@
-use crate::Array2;
+use crate::{Array2, Array1};
 
-impl<T> Array2<T> {
+impl<T> Array2<T> 
+where
+    T: Copy + Default + Clone
+{
     #[allow(unused)]
     pub fn get(&self, row: usize, col: usize) -> T {
 
@@ -15,6 +18,22 @@ impl<T> Array2<T> {
             let ptr = self.array.offset(row as isize * self.cols as isize + col as isize);
             std::ptr::read(ptr)
         }
+    }
+
+    #[allow(unused)]
+    pub fn index(&self, row: usize) -> Array1<T> {
+
+        if self.rows <= row {
+            println!("cant get index of row {}!", row);
+        }
+
+        let out: Array1<T> = Array1::new(self.cols);
+
+        for i in 0..self.cols {
+            out.set_index(i, self.get(row, i));
+        }
+
+        out
     }
 
     #[allow(unused)]
